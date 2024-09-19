@@ -1,3 +1,61 @@
+
+/**
+ 2.Write a program to calculate the roots of the quadratic equation ax2 + bx + c = 0
+where a, b and c are known.
+
+*/
+
+
+
+#include<bits/stdc++.h>
+using namespace std;
+using ll = long long;
+
+#define shafu() ios_base::sync_with_stdio(0);cin.tie(0);cout.tie(0);
+
+int main(){
+
+
+
+   int a,b,c;
+   cin >> a >> b >> c;
+
+
+   int d = (b * b)  - 4 * a * c;
+
+   if(d > 0){
+       int  x1 = (-b + sqrt(d))/ (2 * a);
+
+       int x2 = (-b - sqrt(d)) / (2 * a);
+
+       cout << x1 << ' ' << x2 << '\n';
+   }
+
+   else if(d == 0){
+       cout << -b/(2 * a) << '\n';
+   }
+
+   else {
+    cout << "NO REAL SOLUTION\n";
+   }
+
+   /**
+     input : 1, -7 , 10
+     output : 5, 2
+   */
+return 0;
+
+}
+
+
+
+
+
+
+
+
+
+
 /**
 
 3. Write a program to create an array of n elements to read the marks of n students
