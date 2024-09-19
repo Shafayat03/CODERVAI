@@ -88,3 +88,57 @@ int main(){
     
     cout << cnt << '\n';
 }
+
+
+
+
+/**
+
+4. Write a program to create an array of n elements and then insert an element to
+the list.
+
+**/
+/**
+5. Write a program to create an array of n elements and then delete an element
+from the list. 
+**/
+
+/**
+6. Write a program to sort n numbers using Bubble Sort algorithm.
+
+*/
+
+
+/**
+7. Write a program to search an element from a list of n numbers using Linear
+Search algorithm.
+
+*/
+
+/**
+8. Write a program to search an element from a list of n numbers using Binary
+Search algorithm.
+
+*/
+
+
+/**
+9. Write a program to determine whether a number n is prime or not where 1< n <2
+15 by using sieve method.
+
+*/
+
+
+/**
+10.Write a program to write 100 randomly generated integer to a file called
+RAND.DAT. And then read the contents of the file and display them on the
+screen.
+
+*/
+
+
+
+
+
+
+
