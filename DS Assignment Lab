@@ -1,3 +1,52 @@
+/**
+1. Write a program to find the largest number and it's location from a given list of
+integers.
+*/
+
+#include<bits/stdc++.h>
+using namespace std;
+
+int main(){
+
+
+ 
+
+
+
+ int n,k;
+ cin >> n;
+
+ vector<int>a(n+4);
+
+ for(int i = 1; i <= n; i++){
+    cin >> a[i];
+ }
+
+  int pos = 0;
+
+  int mx = *a.begin();
+
+  for(int i = 1;i <= n; i++){
+      if(a[i] > mx ){
+         mx = a[i];
+         pos = i;
+
+      }
+  }
+
+  cout << pos << ' ' << mx << '\n';
+
+
+
+return 0;
+
+
+}
+
+
+
+
+
 
 /**
  2.Write a program to calculate the roots of the quadratic equation ax2 + bx + c = 0
