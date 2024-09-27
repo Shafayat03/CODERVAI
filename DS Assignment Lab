@@ -424,6 +424,42 @@ screen.
 */
 
 
+#include<bits/stdc++.h>
+using namespace std;
+
+
+int main(){
+
+    ofstream outFile("RAND.DAT");
+
+    if(!outFile){
+        cout <<"File not found\n";
+        return 0;
+    }
+
+      srand(time(0));
+
+      for(int i = 0; i < 100; i++){
+        outFile <<(rand() % 1000+1) << ' ';
+      }
+
+      outFile.close();
+
+      ifstream inFile("RAND.DAT");
+
+      if(!inFile){
+        cout <<"File not found\n";
+        return 0;
+      }
+
+      for(int i = 0; i < 100; i++){
+        int n;
+        inFile>> n;
+        cout << n << ' ';
+      }
+      inFile.close();
+
+     }
 
 
 
