@@ -268,11 +268,62 @@ return 0;
 
 
 
+
 /**
 7. Write a program to search an element from a list of n numbers using Linear
 Search algorithm.
 
 */
+
+#include<bits/stdc++.h>
+using namespace std;
+
+int main(){
+
+
+
+ int n;
+ cin >> n;
+
+ vector<int>a(n);
+
+ for(int i = 0; i < n; i++){
+    cin >> a[i];
+ }
+
+
+ int value;
+ cin >> value;
+ int fans = -1;
+
+
+
+ for(int i = 0; i < n;i++){
+
+      if(a[i] ==  value){
+
+           fans = i;
+      }
+ }
+
+
+if(fans != -1) cout << "element found at : " << fans + 1 << '\n';
+else cout << "element doesn's exist" << '\n';
+
+
+return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
 
 /**
 8. Write a program to search an element from a list of n numbers using Binary
