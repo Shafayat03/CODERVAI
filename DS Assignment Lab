@@ -332,6 +332,58 @@ Search algorithm.
 */
 
 
+#include<bits/stdc++.h>
+using namespace std;
+
+
+int main(){
+
+
+     int n;
+     cin >> n;
+
+     vector<int>a(n);
+
+   for(int i = 0; i < n ;i++)cin >> a[i];
+
+
+     sort(a.begin(),a.end());
+
+
+     int value;
+     cin  >> value;
+     int fans = -1;
+
+     int l = 0, r = n -1;
+
+     while(l <= r){
+            int mid = (l + r) / 2;
+
+
+         if(a[mid] == value){
+            fans = mid;
+            break;
+         }
+
+         if(value < a[mid]){
+            r = mid - 1;
+         }
+         else l = mid + 1;
+
+     }
+
+
+     if(fans != -1 ) cout <<"element found at : "  << fans+ 1 << '\n';
+     else cout <<"element doesn't exist" << '\n';
+
+     }
+
+
+
+
+
+
+
 /**
 9. Write a program to determine whether a number n is prime or not where 1< n <2
 15 by using sieve method.
