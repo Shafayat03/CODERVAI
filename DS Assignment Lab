@@ -308,7 +308,7 @@ int main(){
 
 
 if(fans != -1) cout << "element found at : " << fans + 1 << '\n';
-else cout << "element doesn's exist" << '\n';
+else cout << "element doesn't exist" << '\n';
 
 
 return 0;
