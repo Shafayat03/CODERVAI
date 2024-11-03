@@ -1,0 +1,289 @@
+///all codes practice ds for tomorrow 
+
+/// seive of erathothenis
+
+#include<bits/stdc++.h>
+using namespace std;
+const int mx = 32768;
+
+vector<bool>isPrime(mx, true);
+int main(){
+    /*
+    isPrime[0] = isPrime[1] =  false;
+    
+    
+    for(int i = 2; i< mx; i++){
+        if(isPrime[i]){
+            for(int j = i * i;  j < mx; j+= i){
+                isPrime[j] = false;
+            }
+        }
+    }
+    
+    
+ int n;
+ cin >> n;
+ 
+ if(n <= 1 or n >= mx) cout <<"Invalid";
+ else{
+     if(isPrime[n]){
+         cout << n << " is a prime number\n";
+     }
+     else cout << n << " is not a prime number \n";
+ }
+   
+ 
+  */
+    
+    
+    
+    /// Binary Search Algo
+    
+    /*
+    
+    
+    
+    
+    int n;
+    cin >> n;
+    vector<int>a(n);
+    for(auto &u : a)cin >> u;
+    
+    sort(a.begin(),a.end());
+    
+    
+    int l  = 0, r = n - 1;
+    int val;
+    cin >> val;
+    
+    int fans = -1;
+    
+    while(l <=r ){
+            
+            int mid = (l+r)/2;
+            
+            if(a[mid] == val){
+                 fans = mid;
+                 break;
+            
+                
+            }
+            else if(val < a[mid]){
+                r = mid - 1;
+            }
+            else{
+                l = mid + 1;
+            }
+    }
+    
+    if(fans != -1) cout << "  found  at  " << fans + 1 << '\n';
+    else cout << "Not found\n";
+    
+    
+    
+    
+    
+    */
+    
+    
+    
+    
+    /// Linear Search aligno
+    
+    
+    /*
+    int n;
+    cin >> n;
+    
+    
+    vector<int>l(n);
+    
+    for(auto &u : l) cin >> u;
+    int x;
+    cin >> x;
+    int ans = -1;
+    
+    for(int i = 0 ; i < n; i++){
+         if(l[i] == x) {
+               ans = i;
+               break;
+        }
+    }
+    
+  
+  if(ans != -1) cout << " value found at  " << ans << '\n';
+  else cout <<"not found\n";
+    
+    */
+    
+    
+    
+    
+    /// Bubble sort
+    
+    
+    /*
+     int n;
+     cin >> n;
+     
+     vector<int>a(n);
+     
+     for(auto &u : a)cin >> u;
+     
+     
+     for(int i = 0; i < n; i++){
+          for(int j = 0; j < n - i - 1; j++){
+               if(a[j] > a[j+1])swap(a[j], a[j+1]);
+          }
+     }
+     
+     
+     for(auto u : a) cout << u << ' ';
+     cout <<  '\n';
+    
+    */
+    
+   
+   
+   
+   
+   
+    /// Quadric equation
+    
+    /*
+    
+    
+    int a,b,c;
+    cin >> a >> b >> c;
+    
+    int d = (b * b) - 4 * a * c;
+    
+    
+    if(d > 0){
+          int x = ( -b +sqrt(d))/(2 * a);
+          int y = (-b - sqrt(d))/(2 * a);
+      cout << x << ' ' << y  << '\n';    
+    }
+    else if(d == 0){
+         int x = -b / (2 * a);
+         cout << x << '\n';
+    }
+    else cout <<"No  real solution\n";
+    
+    
+    
+    
+    */
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    /// find the largest from the list 
+    
+    /*
+     int n;
+     cin >> n;
+     vector<int>a(n);
+     
+     for(auto &u : a)cin >> u;
+     
+     
+     int x = *a.begin();
+     int pos = -1;
+     for(int i = 0 ;i <n; i++){
+          if(a[i] >= x){
+               x = a[i];
+               pos = i;
+          }
+     }
+     
+     cout << x  << ' ' << pos << '\n';
+     
+    
+    
+    
+    */
+    
+    
+    
+    
+    
+    
+    /// Create array of n element and insert new element in a position
+    
+    /*
+    
+     int n;
+     cin >> n;
+     
+     vector<int>a(n);
+     
+     
+     for(auto &u : a)cin >> u;
+     cout <<"Enter new element : ";
+     
+     int new_element;
+     cin >> new_element;
+     
+     cout <<"Enter the positon : ";
+     int pos;
+     cin >> pos;
+     
+     if(pos < 0 or pos > n) cout <<"Invalid\n";
+     
+     
+     for(int i = n ;i > pos; i--){
+          a[i] = a[i-1];
+          
+     }
+    
+    
+    a[pos] = new_element;
+    n++;
+    
+    
+    for( int i = 0; i < n ;i++ ) cout <<  a[i] << ' ';
+    cout << '\n';
+    
+    
+    
+    */
+    
+    
+    
+    
+    
+    
+    
+    ///Create array of n element and  Delete an  element in a position
+    
+    
+    /*
+    
+    int n;
+    cin >> n;
+    vector<int>a(n);
+    
+    for(auto &u : a)cin >> u;
+    
+    cout <<"Enter the positon : ";
+    int pos;
+    cin >> pos;
+    
+    if(pos < 0 or pos > n) cout <<"Invalid\n";
+    
+    for(int i = pos; i < n -1; i++){
+         a[i] = a[i+1];
+    }
+    
+    
+    for(int i = 0; i < n - 1; i++) cout << a[i] << ' ';
+    cout << '\n';
+    
+   */ 
+}
