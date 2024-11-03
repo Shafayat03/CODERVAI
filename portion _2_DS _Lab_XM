@@ -57,3 +57,52 @@ int main() {
 
     return 0;
 }
+
+
+/**
+
+A text T in memory. Write a program to delete a string S of length L from Kth
+position in T.
+
+
+
+*/
+
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+int main() {
+    string t = "Hello, World!";
+    string s = "World";
+    int K = 7;
+    //int L = S.length();
+     
+     
+     int n = t.length();
+     int m = s.length();
+
+
+    // Check if K is within valid range
+    
+    if (K < 0 || K >= n || K + m > n) {
+        cout << "Invalid K value" << endl;
+        return 1;
+    }
+
+    // Delete the substring
+    
+   t.erase(K, m);
+
+    cout << "Modified string: " << t << endl;
+
+    return 0;
+}
+
+
+
+
+
+
+
