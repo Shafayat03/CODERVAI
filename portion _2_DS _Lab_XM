@@ -1,0 +1,59 @@
+/**
+
+Given a number N (0 < N < 103) and an array A of N numbers. Then you will be given an integer
+K (0 < K <= N). You have to delete the Kth element from array A and display array A.
+Sample Input Sample Output
+4
+5 2 7 3
+3
+Deleted: 7
+Array: 5 2 3
+
+
+
+
+
+
+
+
+
+
+**/
+
+
+
+#include <iostream>
+#include <vector>
+
+using namespace std;
+
+int main() {
+    int n,k;
+    cin >> n;
+
+    vector<int> a(n);
+    for (int i = 0; i < n; i++) {
+        cin >> a[i];
+    }
+
+    cin >> k;
+
+    /// Adjust K to 0-based indexing (since vectors are 0-indexed)
+   k--;
+
+    /// Check if K is within valid range
+    if (k >= 0 && k < n) {
+        cout << "Deleted: " << a[k] << endl;
+       a.erase(a.begin() + k);
+
+        cout << "Array: ";
+        for (auto u : a) {
+            cout << u << " ";
+        }
+        cout << '\n';
+    } else {
+        cout << "Invalid K value" << endl;
+    }
+
+    return 0;
+}
