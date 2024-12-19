@@ -1,0 +1,274 @@
+
+///1. Write a program to sort n numbers using Insertion Sort algorithm.
+
+#include<bits/stdc++.h>
+using namespace std;
+using ll = long long;
+//#define mx 1e5 + 123
+void insertion_sort_algo(int a[], int n){
+
+   int i , key_val, j;
+
+   for(int i = 1; i < n; i++){
+       key_val = a[i];
+
+       j = i - 1;
+
+       // akn [0...i -1] theke check korbo key_val_ pacci kina
+
+       while(j >= 0 and a[j] > key_val){
+
+          a[j+1] = a[j];
+          j--; // j er value komabo
+
+       }
+       a[j+1] = key_val; // ai position e key_val k store korbo
+   }
+
+
+
+
+}
+
+
+int main(){
+
+      int n;
+      cin >> n;
+
+      int a[100000+123];
+
+      for(int i = 0; i < n; i++){
+        cin >> a[i];
+      }
+
+
+      insertion_sort_algo(a, n);
+
+        for(int i = 0; i < n; i++){
+        cout <<  a[i] << ' ';
+      }
+      cout << '\n';
+
+
+
+
+return 0;
+}
+
+
+
+
+
+
+///2. Write a program to sort n numbers using Selection Sort algorithm.
+
+#include<bits/stdc++.h>
+using namespace std;
+using ll = long long;
+//#define mx 1e5 + 123
+
+void selection_sort_algo(int a[], int n){
+
+
+
+   for(int i = 0; i < n -1; i++){
+
+       int mn = i;
+
+       for(int j = i + 1; j < n ;j++){
+            if(a[j] < a[mn]){
+                  mn = j;
+            }
+       }
+
+     if(mn != i){
+         int t = a[mn];
+         a[mn] = a[i];
+         a[i] = t;
+     }
+
+
+   }
+}
+int main(){
+
+      int n;
+      cin >> n;
+
+      int a[100000+123];
+
+      for(int i = 0; i < n; i++){
+        cin >> a[i];
+      }
+
+
+      selection_sort_algo(a, n);
+
+        for(int i = 0; i < n; i++){
+        cout <<  a[i] << ' ';
+      }
+      cout << '\n';
+
+
+
+
+return 0;
+}
+
+
+
+
+///3. Write a program to sort n numbers using Quick Sort algorithm.
+
+#include<bits/stdc++.h>
+using namespace std;
+using ll = long long;
+//#define mx 1e5 + 123
+
+
+int partition_ing(int l, int r, int a[], int n) {
+    int i = l, j = l;
+
+    while (j < r) {
+        if (a[j] < a[r]) {
+
+            int t = a[i];
+            a[i] = a[j];
+            a[j] = t;
+            i++;
+        }
+        j++;
+    }
+
+    // position onojaiy amra value gula re sort kore store korci
+    int t = a[i];
+    a[i] = a[r];
+    a[r] = t;
+
+    return i; // index k return korteci
+}
+
+
+void Quick_sort(int l, int r, int a[], int n) {
+    if (l >= r) return;
+    int p = partition_ing(l, r, a, n);
+    Quick_sort(l, p - 1, a, n); // array er bam dike er part sort
+    Quick_sort(p + 1, r, a, n); // array er dan dike er part sort
+
+}
+
+int main() {
+    int n;
+    cin >> n;
+    int a[n];
+    for (int i = 0; i < n; i++) {
+        cin >> a[i];
+
+    Quick_sort(0, n - 1, a, n);
+
+    for (int i = 0; i < n; i++) {
+        cout << a[i] << ' ';
+    }
+    cout << '\n';
+
+    return 0;
+}
+}
+
+
+
+///4. Write a program to merge two sorted list.
+
+#include<bits/stdc++.h>
+using namespace std;
+using ll = long long;
+
+//#define mx 1e5 + 123
+
+void merge(int a[], int l, int r) {
+    int mid = (l + r) / 2;
+
+    int n = mid - l + 1;
+    int m = r - mid;
+
+    int A[n], B[m];
+
+
+    for (int i = 0, j = l; i < n; i++, j++) {
+        A[i] = a[j];
+    }
+    for (int i = 0, j = mid + 1; i < m; i++, j++) {
+        B[i] = a[j];
+    }
+
+    //  A ebong B ke a[] te merge kore store kore rakhbo
+    int i = 0, j = 0, k = l;
+    while (i < n && j < m) {
+        if (A[i] < B[j]) {
+            a[k] = A[i];
+            i++;
+        } else {
+            a[k] = B[j];
+            j++;
+        }
+        k++;
+    }
+
+    // A er j value gula remaining oi gula re store korci
+    while (i < n) {
+        a[k] = A[i];
+        i++;
+        k++;
+    }
+
+    // B er j value gula remaining oi gula re store korci
+    while (j < m) {
+        a[k] = B[j];
+        j++;
+        k++;
+    }
+}
+
+
+void mergeSort(int a[], int l, int r) {
+    if (l >= r) return;
+
+    int mid = (l + r) / 2;
+
+
+    mergeSort(a, l, mid); // a er left part tah sort korci
+    mergeSort(a, mid + 1, r); // a er right part tah sort korci
+
+
+    merge(a, l, r);
+}
+
+int main() {
+    int n;
+
+    cin >> n;
+
+    int a[n];
+
+    for (int i = 0; i < n; i++) {
+        cin >> a[i];
+    }
+
+    mergeSort(a, 0, n - 1);
+
+
+    for (int i = 0; i < n; i++) {
+        cout << a[i] << " ";
+    }
+    cout << '\n';
+
+    return 0;
+}
+
+
+
+
+
+
+
