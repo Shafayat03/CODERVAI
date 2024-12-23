@@ -174,11 +174,106 @@ int main() {
 
     return 0;
 }
+
+
 }
 
 
 
-///4. Write a program to merge two sorted list.
+
+
+
+///4. Write a program to merge two sorted list
+
+#include<bits/stdc++.h>
+using namespace std;
+using ll = long long;
+
+
+
+void final_merged(int a[], int n, int b[], int m, int f_stored[]){
+
+   int i = 0, j = 0, k = 0;
+
+
+// check this exist on not
+   while(i < n and j < m){
+    if(a[i] < b[j]){
+        f_stored[k++] = a[i++];
+    }
+    else{
+        f_stored[k++] = b[j++];
+    }
+   }
+
+
+while(i < n){
+    f_stored[k++] = a[i++];
+}
+
+while(j < m){
+    f_stored[k++] = b[j++];
+}
+
+
+
+}
+
+
+
+int main(){
+
+
+   int n, m;
+   cin >> n >> m;
+
+   int a[n] , b[m];
+
+   for(int i = 0; i < n; i++)cin >> a[i];
+
+   for(int i = 0; i < m; i++)cin >> b[i];
+
+   int sz = n + m;
+
+  int finally_merged[sz];
+
+
+  final_merged(a, n, b, m, finally_merged);
+
+  for(int i = 0; i< sz; i++){
+     cout << finally_merged[i] << ' ';
+  }
+  cout << '\n';
+
+return 0;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// 5. Write a program to sort n numbers using Merge Sort algorithm.
 
 #include<bits/stdc++.h>
 using namespace std;
